@@ -7,6 +7,10 @@ h2 {
     font-size: 2rem;
 }
 
+.cyberTextColor {
+    color: #6a63f3;
+}
+
 .feature {
     display: block;
 

@@ -40,9 +40,11 @@ function toggleTheme() {
 function enableDarkTheme() {
     DARK_STYLE_LINK.setAttribute("href", DARK_THEME_PATH);
     THEME_TOGGLER.innerHTML = "🌙 Dark";
+    $('h2').addClass('cyberTextColor');
 }
 
 function disableDarkTheme() {
     DARK_STYLE_LINK.setAttribute("href", LIGHT_THEME_PATH);
-    THEME_TOGGLER.innerHTML = "🌞 Light";
+    THEME_TOGGLER.innerHTML = "🌞 Light";;
+    $('h2').removeClass('cyberTextColor');
 }
