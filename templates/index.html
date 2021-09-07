@@ -6,15 +6,22 @@
 </div>
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-4"><img src="{{ url_for('static', filename='img/create-note.svg')}}" />
-            <p>Create notes quickly </p>
+        <div class="col-md-4">
+            <img class="img-responsive ms-auto me-auto feature"
+                src="{{ url_for('static', filename='img/create-note.svg')}}" />
+            <h2 class="feature-text">Create notes quickly </h2>
         </div>
         <div class="col-md-4">
-            <img src="{{ url_for('static', filename='img/colored-notes.svg')}}" />
-            <p> Organise your notes with color </p>
+            <div class="ms-auto me-auto">
+                <img class="img-responsive ms-auto me-auto feature"
+                    src="{{ url_for('static', filename='img/colored-notes.svg')}}" />
+            </div>
+            <h2 class="feature-text"> Organise your notes with color </h2>
         </div>
-        <div class="col-md-4"><img src="{{ url_for('static', filename='img/cloud-sync.svg')}}" />
-            <p>Access your notes from any device</p>
+        <div class="col-md-4">
+            <img class="img-responsive ms-auto me-auto feature"
+                src="{{ url_for('static', filename='img/cloud-sync.svg')}}" />
+            <h2 class="feature-text">Access your notes from any device, any time</h2>
         </div>
     </div>
 </div>

@@ -2,3 +2,16 @@ h1 {
     font-family: 'Kaushan Script', cursive;
 
 }
+
+h2 {
+    font-size: 2rem;
+}
+
+.feature {
+    display: block;
+
+}
+
+.feature-text {
+    text-align: center;
+}
