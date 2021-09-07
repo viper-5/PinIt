@@ -4,7 +4,7 @@ const LOCAL_STORAGE_KEY = "toggle-bootstrap-theme";
 const LOCAL_META_DATA = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
 
 // you can change this url as needed
-const DARK_THEME_PATH = "https://bootswatch.com/5/vapor/bootstrap.min.css";
+const DARK_THEME_PATH = "https://cdn.jsdelivr.net/npm/bootswatch@5.1.0/dist/vapor/bootstrap.min.css";
 const LIGHT_THEME_PATH = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css";
 
 // const DARK_STYLE_LINK = document.getElementById("dark-theme-style");
