@@ -1,7 +1,7 @@
 @echo off
 
-export FLASK_APP=app.py
-export FLASK_DEBUG=true
-export FLASK_ENV=development
-export FLASK_DEBUG=1
+SET FLASK_APP=app.py
+SET FLASK_DEBUG=true
+SET FLASK_ENV=development
+SET FLASK_DEBUG=1
 flask run
