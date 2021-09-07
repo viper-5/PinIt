@@ -19,3 +19,21 @@ h2 {
 .navbar {
     background-color: #305376
 }
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: #00ffca;
+}
+
+.nav-link {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.myNavLink {
+    color: #cf75eb !important;
+}
+
+.myNavLink:hover {
+    color: #c34ee8 !important;
+}

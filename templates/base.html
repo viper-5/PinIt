@@ -21,10 +21,11 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="https://kit.fontawesome.com/2bb60e7899.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Footer-Basic.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Footer-Dark.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
-    <script src="https://kit.fontawesome.com/2bb60e7899.js" crossorigin="anonymous"></script>
     <title>PinIt</title>
 </head>
 
@@ -43,13 +44,13 @@
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
+                        <li class="nav-item"><a class="nav-link myNavLink" href="#">Second Item</a></li>
                         <li class="nav-item"></li>
                     </ul>
                     <!-- 🚨 Notice the toggleTheme() function -->
 
-                    <a href="javascript:void(0)" class="btn btn-outline-info btn-lg me-5 ms-3 me-10 font-weight-bold"
-                        id="theme-toggler" onclick="toggleTheme()"></a>
+                    <a href="#" class="btn btn-outline-info btn-lg me-5 ms-3 me-10 font-weight-bold" id="theme-toggler"
+                        onclick="toggleTheme()"></a>
                 </div>
             </div>
         </nav>
