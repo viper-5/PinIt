@@ -35,7 +35,7 @@
 <body>
     <section id="title" class="myNav me-auto">
         <nav class="navbar navbar-light navbar-expand-md  pt-3 ps-5">
-            <div class="container-fluid"><a class="navbar-brand" href="#">
+            <div class="container-fluid"><a class="navbar-brand" href="{{ url_for('home')}}">
                     <img src="{{ url_for('static', filename='img/brand-alt.svg')}}" />
                 </a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
                     <span class="visually-hidden">
@@ -46,9 +46,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
-                        <li class="nav-item"><a class="nav-link myNavLink" href="#">Second Item</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link active" href="#">Sign Up</a></li> -->
+                        <li class="nav-item"><a class="nav-link myNavLink" href="{{url_for('signUp')}}">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link myNavLink" href="{{url_for('login')}}">Login</a></li>
+
                         <li class="nav-item"></li>
+
                     </ul>
                     <!-- 🚨 Notice the toggleTheme() function -->
 
@@ -57,30 +60,14 @@
                 </div>
             </div>
         </nav>
+
     </section class="me-5 ms-5">
     {% block content %}
 
     {% endblock %}
-    <section>
-        <div class="container-fluid ms-5 me-5">
-            <div class="jumbotron">
-                <h1 class="display-4">Put User Help</h1>
-                <p class="lead">
-                    This is a simple hero unit, a simple jumbotron-style component for
-                    calling extra attention to featured content or information.
-                </p>
-                <hr class="my-4" />
-                <p>
-                    It uses utility classes for typography and spacing to space content
-                    out within the larger container.
-                </p>
-                <a class="btn btn-success btn-lg" href="#" role="button">Learn more</a>
-            </div>
-        </div>
-
-    </section>
 
     <section class="mt-5">
+
         <footer class="footer-dark">
             <!-- Start: Social Icons -->
             <div class=" social">
