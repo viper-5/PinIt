@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-lg-6 col-md-12 col-sm-12 ms-5 me-5">
+    <h1 style="font-size: 4rem;">All your Notes in One Place</h1>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4"><img src="{{ url_for('static', filename='img/create-note.svg')}}" />
+            <p>Create notes quickly </p>
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='img/colored-notes.svg')}}" />
+            <p> Organise your notes with color </p>
+        </div>
+        <div class="col-md-4"><img src="{{ url_for('static', filename='img/cloud-sync.svg')}}" />
+            <p>Access your notes from any device</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

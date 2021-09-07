@@ -7,37 +7,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
-    <link id="theme" rel="stylesheet" href="https://bootswatch.com/5/cosmo/bootstrap.min.css" />
-
     <!-- 🚨 Notice this link -->
-    <link id="dark-theme-style" rel="stylesheet" />
+
+    <!-- <link rel="stylesheet" id="theme" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.0/dist/cosmo/bootstrap.min.css"> -->
+    <link id="theme" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Kausnan Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Footer-Basic.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Footer-Dark.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
     <script src="https://kit.fontawesome.com/2bb60e7899.js" crossorigin="anonymous"></script>
     <title>PinIt</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-transparent">
-        <!-- 🚨 Notice the toggleTheme() function -->
-        <a href="javascript:void(0)" class="btn btn-outline-info btn-lg me-5 ms-auto mr-10 font-weight-bold"
-            id="theme-toggler" onclick="toggleTheme()"></a>
-    </nav>
-    <div class=""><img src="{{ url_for('static', filename='brand2.svg')}}" /></div>
-    <div class="container-fluid">
-        <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead">
-                This is a simple hero unit, a simple jumbotron-style component for
-                calling extra attention to featured content or information.
-            </p>
-            <hr class="my-4" />
-            <p>
-                It uses utility classes for typography and spacing to space content
-                out within the larger container.
-                <i class="fas fa-sticky-note"></i>
-            </p>
-            <a class="btn btn-success btn-lg" href="#" role="button">Learn more</a>
+    <section id="title" class="myNav me-auto ms-5">
+        <nav class="navbar navbar-transparent navbar-light navbar-expand-md ms-auto mt-3">
+            <div class="container-fluid"><a class="navbar-brand" href="#">
+                    <img src="{{ url_for('static', filename='img/brand.svg')}}" />
+                </a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                    <span class="visually-hidden">
+                        Toggle navigation
+                    </span>
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
+                        <li class="nav-item"></li>
+                    </ul>
+                    <!-- 🚨 Notice the toggleTheme() function -->
+
+                    <a href="javascript:void(0)" class="btn btn-outline-info btn-lg me-5 ms-3 me-10 font-weight-bold"
+                        id="theme-toggler" onclick="toggleTheme()"></a>
+                </div>
+            </div>
+        </nav>
+    </section class="me-5 ms-5">
+    {% block content %}
+
+    {% endblock %}
+    <section>
+        <div class="container-fluid ms-5 me-5">
+            <div class="jumbotron">
+                <h1 class="display-4">Hello, world!</h1>
+                <p class="lead">
+                    This is a simple hero unit, a simple jumbotron-style component for
+                    calling extra attention to featured content or information.
+                </p>
+                <hr class="my-4" />
+                <p>
+                    It uses utility classes for typography and spacing to space content
+                    out within the larger container.
+                </p>
+                <a class="btn btn-success btn-lg" href="#" role="button">Learn more</a>
+            </div>
         </div>
-    </div>
+
+    </section>
+
+    <section class="mt-5">
+        <footer class="footer-dark">
+            <!-- Start: Social Icons -->
+            <div class=" social">
+                <a href="#"><i class="icon ion-social-instagram"></i></a>
+                <a href="#"><i class="icon ion-social-snapchat"></i></a>
+                <a href="#"><i class="icon ion-social-twitter"></i></a>
+                <a href="#"><i class="icon ion-social-facebook"></i></a>
+            </div>
+            <!-- End: Social Icons -->
+
+            <!-- Start: Links -->
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <!-- End: Links -->
+            <!-- Start: Copyright -->
+            <p class="copyright">PinIt © 2021</p><!-- End: Copyright -->
+        </footer><!-- End: Footer Basic -->
+    </section>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
