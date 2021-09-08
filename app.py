@@ -25,4 +25,8 @@ def create_app() -> Flask:
     def login():
         return render_template('login.html')
 
+    @app.route('/create')
+    def create():
+        return render_template('create-note.html')
+
     return app

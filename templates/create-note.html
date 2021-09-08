@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<main>
+	<script src="{{url_for('static', filename='scripts/xncolorpicker.min.js')}}"> </script>
+
+
+
+	<div class="mt-3">
+		<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#new-note"
+			aria-expanded="false" aria-controls="new-note" id="new-note-btn">
+			Take a Note
+		</button>
+		<div class="collapse mt-3 align-items-center" id="new-note">
+			<form class="new-note-form form-signin mt-5 mb-5 border shadow-lg w-100 ">
+				<div class="">
+					<input class="form-control border-0" id="noteTitle" placeholder="Title">
+				</div>
+				<div class="">
+					<textarea class="form-control mt-2 border-0" id="noteContent" placeholder="Take a Note"></textarea>
+				</div>
+			</form>
+			<div id="colorpicker" class="ms-auto me-auto">
+				<div class="fcolorpicker-curbox" style="background: rgb(0, 138, 103) none repeat scroll 0% 0%;"></div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<script>
+		var xncolorpicker = new XNColorPicker({
+
+			selector: "#colorpicker",
+			showPalette: false, // default: true
+			showhistorycolor: false,
+			format: "rgba",
+			lang: "en",
+			color: '#dfdfdf',
+			colorTypeOption: "single",
+
+			// determine whether to show preset colors
+			showprecolor: true,
+			onCancel: function (color) {
+				console.log("cancel", color)
+			},
+			onChange: function (color) {
+				console.log("change", color)
+			},
+			onConfirm: function (color) {
+				console.log("confirm", color)
+			},
+
+			// customize your colors here
+			prevcolors: ['#EF534F', '#BA69C8', '#FFD54F', '#81C784', '#7FDEEA', '#90CAF9', '#F44436', '#AB47BC',
+				'#FFC106', '#66BB6A', '#25C6DA', '#4EC3F7', '#E53934', '#9D27B0', '#FFA726', '#4CAF50', '#00ACC1',
+				'#29B6F6', '#D32E30', '#8F24AA', '#FB8C01', '#378E3C', '#0097A7', '#02AAF4', '#C62928', '#7B1FA2',
+				'#F57C02', '#2F7D31', '#00838F', '#029BE5', '#B71B1C', '#6A1B9A', '#EF6C00', '#34691D', '#006164',
+				'#0388D1', '#980A0B', '#4A148C', '#E65100', '#1A5E20', '#004D41', '#01579B', 'rgba(0,0,0,0)',
+				'#FFFFFF', '#DBDBDB', '#979797', '#606060', '#000000'
+			]
+
+		})
+	</script>
+</main>
+
+
+{% endblock %}
