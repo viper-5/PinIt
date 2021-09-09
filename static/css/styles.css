@@ -1,6 +1,5 @@
 h1 {
     font-family: 'Kaushan Script', cursive;
-
 }
 
 h2 {
@@ -84,14 +83,11 @@ h2 {
 
 #noteContent::-moz-placeholder {
     font-weight: 400;
-
 }
 
 #noteContent::-ms-input-placeholder {
     font-weight: 400;
-
 }
-
 
 #noteTitle::-webkit-input-placeholder {
     font-weight: 400;
@@ -99,12 +95,10 @@ h2 {
 
 #noteTitle::-moz-placeholder {
     font-weight: 400;
-
 }
 
 #noteTitle::-ms-input-placeholder {
     font-weight: 400;
-
 }
 
 .fcolorpicker-curbox {
