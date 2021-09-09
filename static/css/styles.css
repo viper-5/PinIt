@@ -111,6 +111,14 @@ h2 {
     margin: auto;
 }
 
+.myShadowLight {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)
+}
+
+.myShadowDark {
+    box-shadow: 0 .5rem 1rem rgba(184, 163, 216, 0.35)
+}
+
 .bg-transition {
     -webkit-transition: background-color 1000ms linear;
     -ms-transition: background-color 1000ms linear;

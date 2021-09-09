@@ -5,8 +5,6 @@
 <main>
 	<script src="{{url_for('static', filename='scripts/xncolorpicker.min.js')}}"> </script>
 
-
-
 	<div class="mt-3">
 		<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#new-note"
 			aria-expanded="false" aria-controls="new-note" id="new-note-btn">
@@ -34,50 +32,11 @@
 		</div>
 
 	</div>
-
-
-	<script>
-		var xncolorpicker = new XNColorPicker({
-
-			selector: "#colorpicker",
-			showPalette: false, // default: true
-			showhistorycolor: false,
-			format: "rgba",
-			lang: "en",
-			color: window.getComputedStyle(document.getElementsByClassName('new-note-form')[0], null)
-				.getPropertyValue(
-					"background-color"),
-			colorTypeOption: "single",
-
-			// determine whether to show preset colors
-			showprecolor: true,
-			onCancel: function (color) {
-				console.log("cancel", color);
-			},
-			onChange: function (color) {
-				console.log("change", color);
-			},
-			onConfirm: function (color) {
-				console.log("confirm", color);
-				let elem = document.getElementsByClassName('new-note-form')[0];
-				console.log(typeof (color.color.hex), color.color.hex);
-				elem.style.backgroundColor = color.color.hex;
-
-			},
-
-			// customize your colors here
-			prevcolors: [
-				'#f28b82', '#fbbc04', '#fff475', '#ccff90',
-				'#a7ffeb', '#cbf0f8', '#aecbfa', '#d7aefb',
-				'#fdcfe8', '#e6c9a8', '#e8eaed', '#ffffff'
-			]
-		});
-		document.getElementsByClassName('fcolorpicker-curbox')[0].classList.add('border');
-		document.getElementsByClassName('fcolorpicker-curbox')[0].classList.add('shadow');
-		console.log(window.getComputedStyle(document.getElementsByClassName('new-note-form')[0], null).getPropertyValue(
-			"background-color"));
-	</script>
 </main>
 
 
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='scripts/note_color.js')}}"></script>
 {% endblock %}

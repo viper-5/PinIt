@@ -11,7 +11,17 @@ const LIGHT_THEME_PATH = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/
 const DARK_STYLE_LINK = document.getElementById("theme");
 const THEME_TOGGLER = document.getElementById("theme-toggler");
 
-let isDark = LOCAL_META_DATA && LOCAL_META_DATA.isDark;
+var isDark = LOCAL_META_DATA && LOCAL_META_DATA.isDark;
+const lightColors = [
+    '#f28b82', '#fbbc04', '#fff475', '#ccff90',
+    '#a7ffeb', '#cbf0f8', '#aecbfa', '#d7aefb',
+    '#fdcfe8', '#e6c9a8', '#e8eaed', '#ffffff'
+];
+const darkColors = [
+    '#202124', '#5c2b29', '#614a19', '#635d19',
+    '#345920', '#16504b', '#2d555e', '#1e3a5f',
+    '#42275e', '#5b2245', '#442f19', '#3c3f43'
+]
 
 // check if user has already selected dark theme earlier
 if (isDark) {
@@ -28,8 +38,13 @@ function toggleTheme() {
     isDark = !isDark;
     if (isDark) {
         enableDarkTheme();
+        xncolorpicker.destroy();
+        
+        colorPicker();
     } else {
         disableDarkTheme();
+        xncolorpicker.destroy()
+        colorPicker();
     }
     const META = {
         isDark
@@ -48,3 +63,4 @@ function disableDarkTheme() {
     THEME_TOGGLER.innerHTML = "🌞 Light";;
     $('h2').removeClass('cyberTextColor');
 }
+console.log(darkColors);

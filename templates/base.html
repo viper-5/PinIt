@@ -105,6 +105,9 @@
 
     <!-- 🚨 Our custom JavaScript  -->
     <script src="{{ url_for('static', filename='scripts/theme.js')}}"></script>
+
+    {% block scripts %}
+    {% endblock %}
 </body>
 
 </html>
