@@ -33,7 +33,7 @@ jobs:
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: |
           pipenv install --deploy --dev
-          
+
       - name: Run linter
         run: |
           pipenv run pylint app.py
@@ -50,9 +50,7 @@ jobs:
       #       - ~/.local/share/virtualenvs/venv  # this path depends on where pipenv creates a virtualenv
       #     key: pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       #     # Run our unit tests
-      - name: Setup virtualenv
-        run: |
-          pipenv shell
+
 
       - name: Run unit tests
         run: |
