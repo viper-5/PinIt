@@ -38,7 +38,8 @@ jobs:
       #     key: pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       #     # Run our unit tests
       -name: Setup virtualenv
-        run: pipenv shell
+        run: |
+          pipenv shell
 
       - name: Run unit tests
         run: |
