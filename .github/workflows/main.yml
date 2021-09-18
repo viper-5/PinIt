@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Set up Python 3.6 environment
-      - name: Set up Python 3.9.5
+      - name: Set up Python 3.9.7
         uses: actions/setup-python@v1
         with:
           python-version: "3.9.7"
@@ -31,7 +31,7 @@ jobs:
             - pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
             - pip-packages-v1-{{ .Branch }}-
             - pip-packages-v1-
-            
+
       - save_cache:
           paths:
             - ~/.local/share/virtualenvs/venv  # this path depends on where pipenv creates a virtualenv
