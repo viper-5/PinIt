@@ -34,9 +34,9 @@ jobs:
         run: |
           pipenv install --deploy --dev
 
-      - name: Run linter
-        run: |
-          pipenv run pylint app.py
+      # - name: Run linter
+      #   run: |
+      #     pipenv run pylint app.py
         
       # - restore_cache:
       #     keys:
@@ -54,4 +54,4 @@ jobs:
 
       - name: Run unit tests
         run: |
-          python app.py
+          pipenv run python app.py
