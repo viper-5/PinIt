@@ -25,18 +25,18 @@ jobs:
           python -m pip install pipenv
           pipenv install --dev
 
-      - restore_cache:
-          keys:
-            # when lock file changes, use increasingly general patterns to restore cache
-            - pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-            - pip-packages-v1-{{ .Branch }}-
-            - pip-packages-v1-
+      # - restore_cache:
+      #     keys:
+      #       # when lock file changes, use increasingly general patterns to restore cache
+      #       - pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+      #       - pip-packages-v1-{{ .Branch }}-
+      #       - pip-packages-v1-
 
-      - save_cache:
-          paths:
-            - ~/.local/share/virtualenvs/venv  # this path depends on where pipenv creates a virtualenv
-          key: pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-          # Run our unit tests
+      # - save_cache:
+      #     paths:
+      #       - ~/.local/share/virtualenvs/venv  # this path depends on where pipenv creates a virtualenv
+      #     key: pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+      #     # Run our unit tests
 
       - name: Run unit tests
         run: |
