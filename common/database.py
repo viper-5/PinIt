@@ -47,6 +47,3 @@ class Database:
     @staticmethod
     def remove(collection: str, query: Dict) -> Dict:
         return Database.DATABASE[collection].delete_many(filter=query)
-
-
-Database.insert("users", [{"_id": "1233123", "name": "hi"}])

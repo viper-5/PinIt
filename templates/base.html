@@ -47,8 +47,10 @@
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <!-- <li class="nav-item"><a class="nav-link active" href="#">Sign Up</a></li> -->
-                        <li class="nav-item"><a class="nav-link myNavLink" href="{{url_for('signUp')}}">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link myNavLink" href="{{url_for('login')}}">Login</a></li>
+                        <li class="nav-item"><a class="nav-link myNavLink"
+                                href="{{url_for('users.register_user')}}">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link myNavLink"
+                                href="{{url_for('users.login_user')}}">Login</a></li>
                         <li class="nav-item"><a class="nav-link myNavLink" href="{{url_for('create')}}">Create Note</a>
                         </li>
 
