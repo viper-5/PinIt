@@ -22,9 +22,10 @@ class Database:
             urllib.parse.quote_plus(os.environ.get("MONGO_PWD")) +
             "@main.rajun.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
         )
+        DATABASE = client.Main
+
     except TypeError:
         print("MongoDB credentials not available")
-    DATABASE = client.Main
 
     @staticmethod
     def insert(collection: str, data: Union[Dict, List[Dict]]):
