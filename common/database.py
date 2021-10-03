@@ -14,13 +14,16 @@ load_dotenv()
 
 class Database:
 
-    client = pymongo.MongoClient(
-        "mongodb+srv://" +
-        urllib.parse.quote_plus(os.environ.get("MONGO_USER")) +
-        ":" +
-        urllib.parse.quote_plus(os.environ.get("MONGO_PWD")) +
-        "@main.rajun.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-    )
+    try:
+        client = pymongo.MongoClient(
+            "mongodb+srv://" +
+            urllib.parse.quote_plus(os.environ.get("MONGO_USER")) +
+            ":" +
+            urllib.parse.quote_plus(os.environ.get("MONGO_PWD")) +
+            "@main.rajun.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+        )
+    except TypeError:
+        print("MongoDB credentials not available")
     DATABASE = client.Main
 
     @staticmethod
