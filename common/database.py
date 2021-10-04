@@ -24,8 +24,11 @@ class Database:
         )
         DATABASE = client.Main
 
-    except TypeError:
+    except TypeError as NoCredentialsError:
         print("MongoDB credentials not available")
+        raise Exception(
+            "MongoDB credentials not available"
+        ) from NoCredentialsError
 
     @staticmethod
     def insert(collection: str, data: Union[Dict, List[Dict]]):
