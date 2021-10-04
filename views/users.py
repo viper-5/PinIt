@@ -1,5 +1,4 @@
-from flask import Blueprint, flash, redirect, render_template, request, session, url_for
-
+from flask import Blueprint, escape, flash, redirect, render_template, request, session, url_for
 from models.user import User, UserErrors
 
 user_blueprint = Blueprint('users', __name__)
@@ -24,8 +23,8 @@ def register_user():
 @user_blueprint.route('/login', methods=['GET', 'POST'])
 def login_user():
     if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
+        email = escape(request.form['email'])
+        password = escape(request.form['password'])
         try:
             if User.is_login_valid(email, password):
                 session['email'] = email
