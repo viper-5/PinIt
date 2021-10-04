@@ -41,8 +41,8 @@ jobs:
       - name: Run unit tests
         env:
           CI: true
-          MONO_USER: ${{ secrets.MONGO_USER }}
-          MONGO_PWD: ${{ secrets.MONGO_PWD }}
-          ADMIN: ${{ secrets.ADMIN }}
+          MONO_USER: ${{ Default.MONGO_USER }}
+          MONGO_PWD: ${{ Default.MONGO_PWD }}
+          ADMIN: ${{ Default.ADMIN }}
         run: |
           pipenv run python app.py
