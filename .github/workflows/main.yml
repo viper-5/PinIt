@@ -50,13 +50,11 @@ jobs:
       #       - ~/.local/share/virtualenvs/venv  # this path depends on where pipenv creates a virtualenv
       #     key: pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       #     # Run our unit tests
-
-      - name: export Secret Keys
-        run: |
-          export MONGO_USER=${{secrets.MONGO_USER}}
-          export MONGO_PWD=${{secrets.MONGO_PWD}}
-          export ADMIN=${{secrets.ADMIN}}
-
       - name: Run unit tests
+        env:
+          CI: true
+          MONO_USER: ${{secrets.MONO_USER}}
+          MONGO_PWD: ${{secrets.MONGO_PWD}}
+          ADMIN: ${{secrets.ADMIN}}
         run: |
           pipenv run python app.py
