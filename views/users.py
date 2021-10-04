@@ -1,4 +1,5 @@
-from flask import Blueprint, escape, flash, redirect, render_template, request, session, url_for
+from flask import (Blueprint, escape, flash, redirect, render_template,
+                   request, session, url_for)
 from models.user import User, UserErrors
 
 user_blueprint = Blueprint('users', __name__)
