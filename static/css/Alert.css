@@ -15,8 +15,7 @@
 
 .alert-success {
     color: green;
-    border-color: green;
     border: 1px solid green;
     font-weight: bold;
-    background-color: rgba(102, 184, 102, 0.5);
+    background-color: #3cf281;
 }

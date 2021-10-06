@@ -33,14 +33,19 @@ def login_user():
         try:
             if User.is_login_valid(email, password):
                 session['email'] = email
-                return email
+                flash(f'Welcome {email}', "success")
+                return redirect(url_for('create'))
+            else:
+                flash(f'Invalid credentials. Please try again.')
+                return redirect(url_for('users.login_user'))
         except UserErrors.UserError as e:
-            return e.message
+            flash(e.message, 'error')
+            return redirect(url_for('users.login_user'))
 
     return render_template('users/login.html')
 
 
-@user_blueprint.route('/logout')
+@ user_blueprint.route('/logout')
 def logout():
     if 'email' in session:
         session['email'] = None
