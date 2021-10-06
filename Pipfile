@@ -11,6 +11,7 @@ pymongo = {extras = ["srv"], version = "*"}
 passlib = "*"
 flask-paranoid = "*"
 flask-login = "*"
+flask-socketio = "*"
 
 [dev-packages]
 autopep8 = "*"
