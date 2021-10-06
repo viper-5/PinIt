@@ -2,7 +2,8 @@
     font-size: 18px;
     align-items: center;
     text-align: center;
-
+    display: flex !important;
+    justify-content: space-between;
 }
 
 .alert-error {
