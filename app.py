@@ -54,14 +54,6 @@ def create_app() -> Flask:
     def invalid_session():
         return flash("Invalid Session Please Login")
 
-    # @socketio.on('disconnect')
-    # def disconnect_user():
-    #     print("User disconnected.")
-    #     print(session['remember'])
-    #     print(session['email'])
-    #     if not session['remember']:
-    #         session['email'] = None
-
     @app.before_request
     def before_request():
 

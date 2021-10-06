@@ -55,7 +55,7 @@
                         <li class="nav-item">
                             <a class="nav-link myNavLink" href="{{url_for('create')}}">Create Note</a>
                         </li>
-                        {% if session['email'] %}
+                        {% if session.get('email')%}
                         <li class="nav-item">
                             <a class="nav-link myNavLink" href="{{url_for('users.logout')}}">Logout</a>
                         </li>
