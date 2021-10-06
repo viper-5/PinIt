@@ -10,6 +10,7 @@ jinja2 = "*"
 pymongo = {extras = ["srv"], version = "*"}
 passlib = "*"
 flask-paranoid = "*"
+flask-login = "*"
 
 [dev-packages]
 autopep8 = "*"
