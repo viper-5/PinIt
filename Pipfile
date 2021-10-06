@@ -9,6 +9,7 @@ python-dotenv = "*"
 jinja2 = "*"
 pymongo = {extras = ["srv"], version = "*"}
 passlib = "*"
+flask-paranoid = "*"
 
 [dev-packages]
 autopep8 = "*"
