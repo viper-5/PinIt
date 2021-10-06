@@ -1,11 +1,23 @@
+import datetime
 import json
 import os
+from datetime import timedelta
 
 import jinja2
-from flask import Flask, render_template, flash
+from flask import Flask, flash, render_template, session
+# from flask_login import LoginManager
 from flask_paranoid import Paranoid
+from flask_socketio import SocketIO, emit
 
-from views.users import user_blueprint
+from models.user import requires_login
+from views.users import logout, user_blueprint
+from dotenv import load_dotenv
+
+global COOKIE_TIME_OUT
+
+load_dotenv()
+COOKIE_TIME_OUT = int(os.environ.get('COOKIE_TIME'))  # 7 days
+print('COOKIE_TIME_OUT', COOKIE_TIME_OUT)
 
 
 def create_app() -> Flask:
@@ -13,10 +25,18 @@ def create_app() -> Flask:
     app.secret_key = os.urandom(64)
     app.config.update(
         ADMIN=os.environ.get('ADMIN'),
-        SESSION_COOKIE_SECURE=True
+        SESSION_COOKIE_SECURE=True,
+        # PERMANENT_SESSION_LIFETIME=timedelta(seconds=COOKIE_TIME_OUT)
     )
+    # socketio = SocketIO(app)
+
     paranoid = Paranoid(app)
     paranoid.redirect_view = 'users.register'
+
+    # login_manager = LoginManager()
+    # login_manager.session_protection = None
+    # login_manager.init_app(app)
+
     jinja2.Environment(autoescape=True).filters['tojson'] = json.dumps
     app.register_blueprint(user_blueprint, url_prefix="/users")
 
@@ -24,20 +44,44 @@ def create_app() -> Flask:
     def home():
         return render_template('index.html')
 
-    # @app.route('/register')
-    # def signUp():
-    #     return render_template('register.html')
-
-    # @app.route('/login')
-    # def login():
-    #     return render_template('login.html')
-
     @app.route('/create')
+    @requires_login
     def create():
         return render_template('create-note.html')
 
     @paranoid.on_invalid_session
     def invalid_session():
-        return flash("Session Expired Please Login")
+        return flash("Invalid Session Please Login")
+
+    # @socketio.on('disconnect')
+    # def disconnect_user():
+    #     print("User disconnected.")
+    #     print(session['remember'])
+    #     print(session['email'])
+    #     if not session['remember']:
+    #         session['email'] = None
+
+    @app.before_request
+    def before_request():
+
+        now = datetime.datetime.now(datetime.timezone.utc)
+        try:
+            last_active = session['last_active']
+            # print("Last Active ", last_active, type(last_active))
+            delta = now - last_active
+            if delta.seconds > COOKIE_TIME_OUT:
+                print("\n\n\nTIMED OUT\n\n")
+                session['last_active'] = now
+                flash(
+                    f'Your session has expired after {COOKIE_TIME_OUT} seconds, you have been logged out',
+                    category='warning')
+                logout(isSessionExpired=True)
+                return
+        except Exception as e:
+            print(e)
+        try:
+            session['last_active'] = now
+        except Exception as e:
+            print(e)
 
     return app
