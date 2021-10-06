@@ -44,5 +44,6 @@ jobs:
           MONGO_USER: ${{ secrets.MONGO_USER }}
           MONGO_PWD: ${{ secrets.MONGO_PWD }}
           ADMIN: ${{ secrets.ADMIN }}
+          COOKIE_TIME: ${{ secrets.COOKIE_TIME }}
         run: |
           pipenv run python app.py
