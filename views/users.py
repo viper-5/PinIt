@@ -35,9 +35,8 @@ def login_user():
                 session['email'] = email
                 flash(f'Welcome {email}', "success")
                 return redirect(url_for('create'))
-            else:
-                flash(f'Invalid credentials. Please try again.')
-                return redirect(url_for('users.login_user'))
+            flash(f'Invalid credentials. Please try again.')
+            return redirect(url_for('users.login_user'))
         except UserErrors.UserError as e:
             flash(e.message, 'error')
             return redirect(url_for('users.login_user'))
