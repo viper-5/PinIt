@@ -1,0 +1,22 @@
+.alert {
+    font-size: 18px;
+    align-items: center;
+    text-align: center;
+
+}
+
+.alert-error {
+    color: red;
+    border-color: red;
+    border: 1px solid red;
+    background-color: rgba(109, 61, 61, 0.5);
+    font-weight: bold;
+}
+
+.alert-success {
+    color: green;
+    border-color: green;
+    border: 1px solid green;
+    font-weight: bold;
+    background-color: rgba(102, 184, 102, 0.5);
+}

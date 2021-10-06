@@ -16,9 +16,12 @@ def register_user():
         try:
             User.register_user(email, password)
             session['email'] = email
+            flash(f'Welcome {email}', "success")
+            return redirect(url_for('create'))
             return email
         except UserErrors.UserError as e:
-            return e.message
+            flash(e.message, 'error')
+            return render_template('users/register.html')
 
     return render_template('users/register.html')
 
