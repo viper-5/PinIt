@@ -4,14 +4,14 @@ import os
 from datetime import timedelta
 
 import jinja2
-from flask import Flask, flash, render_template, session
+from dotenv import load_dotenv
+from flask import Flask, flash, render_template, request, session
 # from flask_login import LoginManager
 from flask_paranoid import Paranoid
 from flask_socketio import SocketIO, emit
 
 from models.user import requires_login
 from views.users import logout, user_blueprint
-from dotenv import load_dotenv
 
 global COOKIE_TIME_OUT
 
@@ -47,6 +47,7 @@ def create_app() -> Flask:
     @app.route('/create')
     @requires_login
     def create():
+        # request.get_json()['toggle-bootstrap-theme']
         return render_template('create-note.html')
 
     @paranoid.on_invalid_session
