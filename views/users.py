@@ -8,7 +8,7 @@ from models.user import User, UserErrors
 
 user_blueprint = Blueprint('users', __name__)
 
-COOKIE_TIME_OUT = int(os.environ.get('COOKIE_TIME'))
+COOKIE_TIME_OUT = int(str(os.environ.get('COOKIE_TIME')))
 
 
 @user_blueprint.route('/register', methods=['GET', 'POST'])
