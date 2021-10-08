@@ -11,7 +11,8 @@
 			Take a Note
 		</button>
 		<div class="collapse mt-3 align-items-center" id="new-note">
-			<form class="new-note-form form-signin mt-5 mb-5 border shadow-lg w-100">
+			<form class="new-note-form form-signin mt-5 mb-5 border shadow-lg w-100" action="{{ url_for('create') }}"
+				method="POST">
 				<div class="bg-transparent">
 					<input class="form-control border-0 bg-transparent" id="noteTitle" placeholder="Title">
 				</div>
@@ -23,7 +24,8 @@
 
 			<div>
 				<div class="ms-auto me-auto w-30 ps-lg-1 submit-note">
-					<button class="w-20 btn btn-lg btn-primary ms-auto" type="submit" style="display:block;">
+					<button class="w-20 btn btn-lg btn-primary ms-auto" id="submit-note-btn" type="submit"
+						onclick="submitForm('.new-note-form')">
 						Create
 					</button>
 				</div>
@@ -47,4 +49,10 @@
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='scripts/note_color.js')}}"></script>
+<script>
+	function submitForm(name) {
+		console.log($(name))
+		$(name).submit();
+	}
+</script>
 {% endblock %}

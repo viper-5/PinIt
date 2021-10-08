@@ -1,14 +1,11 @@
 import datetime
 import json
 import os
-from datetime import timedelta
 
 import jinja2
 from dotenv import load_dotenv
 from flask import Flask, flash, render_template, request, session
-# from flask_login import LoginManager
 from flask_paranoid import Paranoid
-from flask_socketio import SocketIO, emit
 
 from models.user import requires_login
 from views.users import logout, user_blueprint
@@ -44,7 +41,7 @@ def create_app() -> Flask:
     def home():
         return render_template('index.html')
 
-    @app.route('/create')
+    @app.route('/create', methods=['GET', 'POST'])
     @requires_login
     def create():
         if request.method == 'POST':
