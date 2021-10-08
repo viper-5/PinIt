@@ -6,7 +6,6 @@ verify_ssl = true
 [packages]
 flask = "*"
 flask-paranoid = "*"
-flask-socketio = "*"
 jinja2 = "*"
 passlib = "*"
 pymongo = {extras = ["srv"], version = "*"}
