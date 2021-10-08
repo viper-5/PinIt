@@ -47,6 +47,8 @@ def create_app() -> Flask:
     @app.route('/create')
     @requires_login
     def create():
+        if request.method == 'POST':
+            return ("<h1>Create Note Form Submitted</h1>")
         # request.get_json()['toggle-bootstrap-theme']
         return render_template('create-note.html')
 
