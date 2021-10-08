@@ -63,7 +63,7 @@ h2 {
     margin-right: auto;
     display: block;
     justify-content: center;
-    min-width: 1000px;
+    max-width: 1000px;
     border-radius: 10px;
 }
 
@@ -117,4 +117,9 @@ h2 {
     -webkit-transition: background-color 1000ms linear;
     -ms-transition: background-color 1000ms linear;
     transition: background-color 1000ms linear;
+}
+
+.submit-note {
+    max-width: 1000px;
+    padding-right: 15px;
 }
