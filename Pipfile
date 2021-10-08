@@ -6,19 +6,19 @@ verify_ssl = true
 [packages]
 flask = "*"
 flask-paranoid = "*"
+gunicorn = "*"
 jinja2 = "*"
 passlib = "*"
 pymongo = {extras = ["srv"], version = "*"}
 python-dotenv = "*"
-gunicorn = "*"
 
 [dev-packages]
 autopep8 = "*"
+mypy = "*"
 pylint = "*"
 pytest = "*"
 pytest-cov = "*"
 pytest-flask = "*"
-mypy = "*"
 
 [requires]
 python_version = "3.9"
