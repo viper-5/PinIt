@@ -1,120 +1,125 @@
 h1 {
-    font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
 }
 
 h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .cyberTextColor {
-    color: #6a63f3;
+  color: #6a63f3;
 }
 
 .feature {
-    display: block;
-
+  display: block;
 }
 
 .feature-text {
-    text-align: center;
+  text-align: center;
 }
 
 .navbar {
-    background-color: #305376
+  background-color: #305376;
 }
 
 .navbar-light .navbar-nav .nav-link.active,
-.navbar-light .navbar-nav .show>.nav-link {
-    color: #00ffca;
+.navbar-light .navbar-nav .show > .nav-link {
+  color: #00ffca;
 }
 
 .nav-link {
-    font-weight: 600;
-    font-size: 1.2rem;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .myNavLink {
-    color: #cf75eb !important;
+  color: #cf75eb !important;
 }
 
 .myNavLink:hover {
-    color: #c34ee8 !important;
+  color: #c34ee8 !important;
 }
 
 .form-signin {
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: auto;
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
 }
 
 #new-note-btn {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 #new-note {
-    margin: auto;
+  margin: auto;
 }
 
 .new-note-form {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    justify-content: center;
-    min-width: 1000px;
-    border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  justify-content: center;
+  min-width: 1000px;
+  border-radius: 10px;
 }
 
 #noteTitle:focus,
 #noteContent:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 #noteContent {
-    min-height: 200px;
-    font-weight: 400;
+  min-height: 200px;
+  font-weight: 400;
 }
 
 #noteContent::-webkit-input-placeholder {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 #noteContent::-moz-placeholder {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 #noteContent::-ms-input-placeholder {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 #noteTitle::-webkit-input-placeholder {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 #noteTitle::-moz-placeholder {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 #noteTitle::-ms-input-placeholder {
-    font-weight: 400;
+  font-weight: 400;
+}
+
+#pin-btn {
+  margin-left: 1050px;
+  margin-right: auto;
+  display: block;
 }
 
 .fcolorpicker-curbox {
-    margin: auto;
+  margin: auto;
 }
 
 .myShadowLight {
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 .myShadowDark {
-    box-shadow: 0 .5rem 1rem rgba(184, 163, 216, 0.35)
+  box-shadow: 0 0.5rem 1rem rgba(184, 163, 216, 0.35);
 }
 
 .bg-transition {
-    -webkit-transition: background-color 1000ms linear;
-    -ms-transition: background-color 1000ms linear;
-    transition: background-color 1000ms linear;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
 }

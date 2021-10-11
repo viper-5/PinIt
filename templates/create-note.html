@@ -1,42 +1,84 @@
-{% extends 'base.html' %}
-
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <main>
-	<script src="{{url_for('static', filename='scripts/xncolorpicker.min.js')}}"> </script>
+  <script src="{{url_for('static', filename='scripts/xncolorpicker.min.js')}}"></script>
 
-	<div class="mt-3">
-		<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#new-note"
-			aria-expanded="false" aria-controls="new-note" id="new-note-btn">
-			Take a Note
-		</button>
-		<div class="collapse mt-3 align-items-center" id="new-note">
-			<form class="new-note-form form-signin mt-5 mb-5 border shadow-lg w-100">
-				<div class="bg-transparent">
-					<input class="form-control border-0 bg-transparent" id="noteTitle" placeholder="Title">
-				</div>
-				<div class="bg-transparent">
-					<textarea class="form-control mt-2 border-0 bg-transparent" id="noteContent"
-						placeholder="Take a Note ..."></textarea>
-				</div>
-			</form>
+  <div class="mt-5">
+    <button
+      class="btn btn-primary"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#new-note"
+      aria-expanded="false"
+      aria-controls="new-note"
+      id="new-note-btn"
+    >
+      Take a Note
+    </button>
+    <div class="collapse mt-3 align-items-center" id="new-note">
+      <form class="new-note-form form-signin mt-5 mb-5 border shadow-lg w-100">
+        <div class="bg-transparent">
+          <input
+            class="form-control border-0 bg-transparent"
+            id="noteTitle"
+            placeholder="Title"
+          />
+        </div>
+        <div class="bg-transparent">
+          <textarea
+            class="form-control mt-2 border-0 bg-transparent"
+            id="noteContent"
+            placeholder="Take a Note ..."
+          ></textarea>
+        </div>
+      </form>
 
-			<div class="ms-5 me-5">
-				<p style="text-align:center;">Choose color</p>
+      <div class="ms-5 me-5">
+        <button type="button" class="btn btn-primary" id="pin-btn">Pin Note</button>
+        <p style="text-align: center">Choose color</p>
 
-				<div id="colorpicker">
-					<!-- <div class="fcolorpicker-curbox" style="background: rgb(0, 138, 103) none repeat scroll 0% 0%;"></div> -->
-				</div>
-			</div>
-
-		</div>
-
-	</div>
+        <div id="colorpicker">
+          <!-- <div class="fcolorpicker-curbox" style="background: rgb(0, 138, 103) none repeat scroll 0% 0%;"></div> -->
+        </div>
+      </div>
+  </div>
+  <section class="mt-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="shadow-lg m-2 col-sm-6 col-md-5 col-lg-4 rounded-lg">
+          <textarea class="mt-2 border-0 bg-transparent">1</textarea>
+        </div>
+        <div class="shadow-lg m-2 col-sm-6 col-md-5 col-lg-4 rounded-lg">
+          <textarea class="mt-2 border-0 bg-transparent">2</textarea>
+        </div>
+        <div class="shadow-lg m-2 col-sm-6 col-md-5 col-lg-4 rounded-lg">
+          <textarea class="mt-2 border-0 bg-transparent">3</textarea>
+        </div>
+        <div class="shadow-lg m-2 col-sm-6 col-md-5 col-lg-4 rounded-lg">
+          <textarea class="mt-2 border-0 bg-transparent">4</textarea>
+        </div>
+        <div class="shadow-lg m-2 col-sm-6 col-md-5 col-lg-4 rounded-lg">
+          <textarea class="mt-2 border-0 bg-transparent">5</textarea>
+        </div>
+        <div class="shadow-lg m-2 col-sm-6 col-md-5 col-lg-4 rounded-lg">
+          <textarea class="mt-2 border-0 bg-transparent">6</textarea>
+        </div>
+        <div class="shadow-lg m-2 col-sm-6 col-md-5 col-lg-4 rounded-lg">
+          <textarea class="mt-2 border-0 bg-transparent">7</textarea>
+        </div>
+        <div class="shadow-lg m-2 col-sm-6 col-md-5 col-lg-4 rounded-lg">
+          <textarea class="mt-2 border-0 bg-transparent">8</textarea>
+        </div>
+        <div class="shadow-lg m-2 col-sm-6 col-md-5 col-lg-4 rounded-lg">
+          <textarea class="mt-2 border-0 bg-transparent">9</textarea>
+        </div>
+        <div class="shadow-lg m-2 col-sm-6 col-md-5 col-lg-4 rounded-lg">
+          <textarea class="mt-2 border-0 bg-transparent">10</textarea>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-
-{% endblock %}
-
-{% block scripts %}
+{% endblock %} {% block scripts %}
 <script src="{{ url_for('static', filename='scripts/note_color.js')}}"></script>
 {% endblock %}
